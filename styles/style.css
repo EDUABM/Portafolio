@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{ /*declarar variable de color para llamarlo una sola vez*/
+    --color-primario: #921A40;
+    --color-secundario: #C75B7A;
+    --color-terciario: #D9ABAB;
+    --color-cuaternario:#F4D9D0;
+    --color-hover: #C75B7A;
+    --fuente-Montserrat: 'Montserrat', sans-serif;
+    --fuente-Krona:'Krona One', sans-serif;
+}
+
+body {
+    background-color: var(--color-primario);
+    color: var(--color-terciario); 
+   /*visualizacion de nuestra pagina con el "viewport" de html*/
+    box-sizing: border-box;
+}
+
+.header{
+    padding: 2% 0% 0% 15%; /*right, top, bottom, left*/
+}
+.header__menu{
+    display: flex; /*para que nuestro texto continue alineado horizontalmente*/
+    gap: 80px; /*para separar entre textos el display flex me dice si lo quiero horizontal o vertical y el gap cuanto lo separo*/
+}
+
+.header__menu__link{
+    font-family: var(--fuente-Montserrat);
+    font-size: 1.5rem;
+    font-weight: 600; /*este va sin px*/
+    color:var(--color-terciario);
+    text-decoration: none;
+}
+
+.presentacion{
+    margin: 0% 15%; /*el primer margin es ancho de arriba a abajo de la pagina y el de la derecha es de lado a lado izq a der*/
+    display: flex; /*sirve para organizar y dar espacios*/
+    align-items: center;
+    justify-content: space-between;
+    gap: 82px;
+}
+.presentacion__contenido{
+    width: 50%;
+    gap: 20px;
+}
+.imagen-principal{
+    width: 50%;
+}
+.presentacion__contenido__titulo{
+    font-size: 2.25rem;
+    font-family: var(--fuente-Krona);
+    margin-bottom: 20px;
+}
+
+.titulo-destaque{
+    color: var(--color-terciario);
+}
+
+.presentacion__contenido__texto{
+    font-size: 20px;
+    font-family: var(--fuente-Krona);
+    margin-bottom: 20px;
+}
+
+.presentacion__enlaces{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.presentacion__enlaces__subtitulo{
+    font-family: var(--fuente-Krona);
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.presentacion__enlaces__link{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    border: 2px double var(--color-terciario);
+    width: 50%;
+    text-align: center;
+    border-radius: 8px;
+    background-color: var(--color-primario);
+    font-size: 1.5rem;
+    font-weight: 600px;
+    padding: 10px; /*El padding es responsable de definir la distancia entre un contenido y sus bordes*/
+    text-decoration: none;
+    color: var(--color-terciario);
+    font-family: var(--fuente-Montserrat);
+}
+
+.presentacion__enlaces__link:hover{  /*HOVER para cuando yo me posicione en el boton cambie de color*/
+    background-color: var(--color-secundario);
+}
+
+.footer{
+    background-color: var(--color-secundario);
+    color: var(--color-terciario);
+    padding: 10px;
+   text-align: center;
+   font-family: var(--fuente-Montserrat);
+   font-size: 14px;
+   font-weight: 400;
+   margin-top: 40px;  /*para separar el footer de los botones*/
+}
+
+@media(max-width:1200px){ /*MEDIA QUERY para definir el comportamiento del diseno en diferentes dispositivos*/
+    /*estos son nuestros ajustes de como se vera en dispositivos*/
+    .header{
+        padding: 10%;
+    }
+    .header__menu{
+        justify-content: center; /*no se tiene que repetir el felx porque ya arriba lo tiene*/
+    }
+    .presentacion{
+        flex-direction: column-reverse;
+        padding: 5%;
+    }
+    .presentacion__contenido{
+        width: 100%; /*PARA QUE SE ADAPTE*/
+    }
+}
